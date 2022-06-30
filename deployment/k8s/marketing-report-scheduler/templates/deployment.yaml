@@ -42,6 +42,11 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: status.hostIP
+            - name: ConnectionStrings__Redis
+              valueFrom:
+                secretKeyRef:
+                  name: tgs-connections
+                  key: redis
             - name: Scheduler__MarketingReportDailyAggregateBaseUrl
               value: http://marketing-report-daily-aggregate
             - name: DOTNET_DiagnosticPorts
